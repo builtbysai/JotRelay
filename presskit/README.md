@@ -6,7 +6,7 @@ folder is free to use under the terms in [Asset usage](#asset-usage) below.
 
 If you need something that isn't here, see [Contact](#contact).
 
-**[⬇ Download everything in this folder as one .zip](https://raw.githubusercontent.com/Spairkie/JotRelay/main/presskit/JotRelay-Presskit.zip)**
+**[⬇ Download everything in this folder as one .zip](https://raw.githubusercontent.com/builtbysai/JotRelay/main/presskit/JotRelay-Presskit.zip)**
 (logos, screenshots, and the demo video together — regenerated from the
 files below with `npm run presskit:zip`, so it's always this same content,
 just zipped)
@@ -73,7 +73,7 @@ without the sign-up friction either usually implies.
 - **Auto-expiration & device limits** — rooms that clear themselves after a set time or once too many devices have joined
 - **10 visual themes**, a command palette, keyboard shortcuts, and a full PWA install path
 
-Full feature list: see the [project README](https://github.com/Spairkie/JotRelay#features).
+Full feature list: see the [project README](https://github.com/builtbysai/JotRelay#features).
 
 ---
 
@@ -104,14 +104,14 @@ as a "secure" product in the compliance sense.
 |---|---|
 | **Name** | JotRelay |
 | **Category** | Real-time shared notepad / accountless collaboration tool |
-| **Live app** | [spairkie.github.io/JotRelay](https://spairkie.github.io/JotRelay/) |
+| **Live app** | [builtbysai.github.io/JotRelay](https://builtbysai.github.io/JotRelay/) |
 | **Platform** | Web (any modern browser); installable as a PWA on desktop and mobile |
 | **Account required** | No |
 | **Pricing** | Free |
 | **Built with** | Vanilla JavaScript (ES modules, no framework, no bundler), Supabase (Postgres, Realtime, Storage, Auth for the admin dashboard), CodeMirror 6 |
 | **Hosting** | Static site on GitHub Pages |
-| **Source code** | [github.com/Spairkie/JotRelay](https://github.com/Spairkie/JotRelay) |
-| **Maintainer** | Spairkie |
+| **Source code** | [github.com/builtbysai/JotRelay](https://github.com/builtbysai/JotRelay) |
+| **Maintainer** | builtbysai |
 | **Status** | Actively developed, personal/portfolio project |
 
 ---
@@ -148,7 +148,7 @@ presskit/
 - Pre-rendered PNGs: `icon-512.png`, `icon-256.png`, `icon-128.png`,
   `favicon.png` (64×64), `favicon-32.png`
 - Regenerate the PNGs after editing the SVG with `npm run presskit:icons`
-  (see [the repo's scripts documentation](https://github.com/Spairkie/JotRelay/blob/main/docs/marketing-site.md#scripts)
+  (see [the repo's scripts documentation](https://github.com/builtbysai/JotRelay/blob/main/docs/marketing-site.md#scripts)
   for details and how to add more sizes)
 
 ### Screenshots
@@ -171,7 +171,7 @@ content (a fictional "Q3 Product Roadmap" room, sample files, etc.) rather
 than a live production room, so no real user data appears in them. Replace
 them with real captures once you have production screenshots you're happy
 with; see
-[docs/marketing-site.md](https://github.com/Spairkie/JotRelay/blob/main/docs/marketing-site.md#swapping-in-real-assets)
+[docs/marketing-site.md](https://github.com/builtbysai/JotRelay/blob/main/docs/marketing-site.md#swapping-in-real-assets)
 for how the current ones were generated and how to redo the process.
 
 ### Video
@@ -186,7 +186,7 @@ produce a narrated cut.
 The landing page hero itself no longer autoplays this file — it's a coded,
 interactive five-scene demo instead (`src/app/landing-demo.js` /
 `styles/landing-demo.css`; see
-[docs/marketing-site.md#coded-hero-demo](https://github.com/Spairkie/JotRelay/blob/main/docs/marketing-site.md#coded-hero-demo)).
+[docs/marketing-site.md#coded-hero-demo](https://github.com/builtbysai/JotRelay/blob/main/docs/marketing-site.md#coded-hero-demo)).
 `demo.mp4` remains available as a presskit/social-media asset and via the
 hero's "Watch recorded demo" link, which opens it on click rather than
 loading it automatically. See [`video/README.md`](video/README.md) for the
@@ -215,7 +215,7 @@ These assets are provided as-is, without warranty, for editorial use.
 ## Contact
 
 For interview requests, questions, or anything not covered here, use the
-[contact form on the JotRelay site](https://spairkie.github.io/JotRelay/contact).
+[contact form on the JotRelay site](https://builtbysai.github.io/JotRelay/contact).
 
 *(This section is a placeholder — swap in a direct press email once one
 exists. Until then, the contact form is the reliable route.)*

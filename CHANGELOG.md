@@ -958,4 +958,4 @@ Branch: `claude/phase1-stability` · Commit: `refactor: CSS Grid editor layout +
 
 ---
 
-[Unreleased]: https://github.com/Spairkie/JotRelay/compare/HEAD...HEAD
+[Unreleased]: https://github.com/builtbysai/JotRelay/compare/HEAD...HEAD

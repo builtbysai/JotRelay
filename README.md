@@ -3,7 +3,7 @@
 > **A temporary shared notepad for fast handoff between devices.**  
 > Create a room, share an editable or read-only link, and sync notes and files in real time — no account needed.
 
-**Live demo:** `https://spairkie.github.io/JotRelay/`
+**Live demo:** `https://builtbysai.github.io/JotRelay/`
 
 ---
 
@@ -229,7 +229,7 @@ ORDER  BY room_id, uploaded_at;
 ## Web3Forms operations (Contact page)
 
 - The Web3Forms access key in `index.html` is a **public frontend key**; do not treat it like a private service-role secret.
-- In Web3Forms dashboard, set **Allowed domain** to `spairkie.github.io`.
+- In Web3Forms dashboard, set **Allowed domain** to `builtbysai.github.io`.
 - Recommended **subject**: `New JotRelay Contact Form Submission`.
 - Recommended **from_name**: `JotRelay Contact Form`.
 - Keep **hCaptcha disabled** unless/until a frontend hCaptcha widget is implemented.

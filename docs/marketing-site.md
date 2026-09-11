@@ -288,7 +288,7 @@ script, and the hard-coded `/JotRelay/` prefixes sprinkled through the
 static HTML). That process is already documented in
 [`DEPLOYMENT.md`](../DEPLOYMENT.md#base-path) — follow "To host at the
 root" there. The one presskit-specific thing to update afterward: the
-`https://spairkie.github.io/JotRelay/` links in `presskit/README.md`'s fact
+`https://builtbysai.github.io/JotRelay/` links in `presskit/README.md`'s fact
 sheet and contact section.
 
 ### `robots.txt` / `sitemap.xml`
@@ -301,12 +301,12 @@ CLAUDE.md §5), so it should never end up indexed by a search engine.
 `sitemap.xml` lists the same allow-listed routes.
 
 One caveat: crawlers fetch `robots.txt` from the *origin* root
-(`https://spairkie.github.io/robots.txt`), not from `/JotRelay/robots.txt` —
-so on the current `spairkie.github.io/JotRelay/` project-page hosting, this
+(`https://builtbysai.github.io/robots.txt`), not from `/JotRelay/robots.txt` —
+so on the current `builtbysai.github.io/JotRelay/` project-page hosting, this
 file only takes effect for crawlers that happen to check it relative to the
 page they found (not guaranteed). It becomes fully effective automatically
 if the site ever moves to root hosting or a custom domain (see above) —
-both URLs in these two files hard-code `https://spairkie.github.io/JotRelay/`
+both URLs in these two files hard-code `https://builtbysai.github.io/JotRelay/`
 and need updating at the same time as the other custom-domain changes.
 
 ### Font loading

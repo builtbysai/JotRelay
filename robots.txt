@@ -20,4 +20,4 @@ Disallow: /admin
 Disallow: /share/
 Disallow: /
 
-Sitemap: https://spairkie.github.io/JotRelay/sitemap.xml
+Sitemap: https://builtbysai.github.io/JotRelay/sitemap.xml

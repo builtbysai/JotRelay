@@ -18,7 +18,7 @@
 
 JotRelay is deployed on two hosts simultaneously, each with a different natural URL shape, from the exact same static files — no build step, no per-host variant:
 
-- **GitHub Pages** (`spairkie.github.io/JotRelay/`) — project-page hosting always prefixes the URL with the repo name.
+- **GitHub Pages** (`builtbysai.github.io/JotRelay/`) — project-page hosting always prefixes the URL with the repo name.
 - **Netlify** (`jotrelay.netlify.app/`, and eventually a custom domain) — serves at the literal root.
 
 `index.html` detects which one it's on and adapts automatically, via a `<base>` element written by a tiny inline script right at the top of `<head>` (before any stylesheet/script tag is parsed):
@@ -228,7 +228,7 @@ JotRelay's contact form uses Web3Forms from frontend JavaScript. The Web3Forms a
 
 Recommended Web3Forms dashboard settings:
 
-- **Allowed domain:** `spairkie.github.io`
+- **Allowed domain:** `builtbysai.github.io`
 - **Subject:** `New JotRelay Contact Form Submission`
 - **from_name:** `JotRelay Contact Form`
 - **hCaptcha:** keep **off** unless the frontend adds an hCaptcha widget and verification flow
