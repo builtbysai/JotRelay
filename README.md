@@ -402,3 +402,7 @@ See [`docs/playwright.md`](docs/playwright.md) for the full test guide.
 ## License
 
 Personal / demo project. Not licensed for production use with sensitive data.
+
+---
+
+*Built by [Hans Sai](https://builtbysai.com)*
