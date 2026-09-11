@@ -1,5 +1,7 @@
 # JotRelay
 
+<p align="center"><img src="presskit/hero.svg" width="800" alt="JotRelay hero — real-time shared notepad, synced in ~250 ms"></p>
+
 > **A temporary shared notepad for fast handoff between devices.**  
 > Create a room, share an editable or read-only link, and sync notes and files in real time — no account needed.
 

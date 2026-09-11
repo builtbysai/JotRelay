@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
+<title id="t">JotRelay — real-time shared notepad</title>
+<desc id="d">Dark hero for JotRelay: two synced note cards, live markdown, presence dots, and a ~250 ms realtime chip.</desc>
+<defs>
+<radialGradient id="glow" cx="0.78" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#60a5fa" stop-opacity="0.14"/>
+<stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+</radialGradient>
+<pattern id="scan" width="1200" height="4" patternUnits="userSpaceOnUse">
+<rect width="1200" height="1" y="3" fill="#000000" opacity="0.28"/>
+</pattern>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+<path d="M48 0H0V48" fill="none" stroke="#123321" stroke-width="1" opacity="0.5"/>
+</pattern>
+<linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#93c5fd"/>
+<stop offset="1" stop-color="#60a5fa"/>
+</linearGradient>
+</defs>
+<rect x="2" y="2" width="1196" height="626" rx="28" fill="#070b08" stroke="#1d3a26" stroke-width="2"/>
+<rect x="2" y="2" width="1196" height="626" rx="28" fill="url(#grid)" opacity="0.35"/>
+<rect x="2" y="2" width="1196" height="626" rx="28" fill="url(#glow)"/>
+<text x="104" y="112" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="17" letter-spacing="6" fill="#5da872">REAL-TIME SHARED NOTEPAD</text>
+<text x="100" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="104" font-weight="700" letter-spacing="-4" fill="#f2f5f9">Jot<tspan fill="#60a5fa">Relay</tspan></text>
+<text x="106" y="300" font-family="Georgia,'Times New Roman',serif" font-size="40" font-style="italic" fill="#c9d4e2">Fast handoff between devices.</text>
+<text x="106" y="344" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="20" fill="#7fb58d">Create a room, share the link — synced in ~250 ms, no account.</text>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="17" fill="#8fd49e">
+<rect x="104" y="388" width="212" height="46" rx="23" fill="#0c120d" stroke="#1d3a26"/>
+<text x="132" y="417">no account needed</text>
+<rect x="332" y="388" width="216" height="46" rx="23" fill="#0c120d" stroke="#1d3a26"/>
+<text x="360" y="417">live markdown</text>
+<rect x="564" y="388" width="196" height="46" rx="23" fill="#0c120d" stroke="#1d3a26"/>
+<text x="592" y="417">file handoff</text>
+</g>
+<!-- presence row -->
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="17" fill="#8ea0b8">
+<circle cx="118" cy="492" r="7" fill="#33ff66"/>
+<circle cx="146" cy="492" r="7" fill="#33ff66"/>
+<circle cx="174" cy="492" r="7" fill="#60a5fa"/>
+<text x="196" y="498">3 connected · Priya is typing…</text>
+</g>
+<!-- synced cards motif -->
+<g>
+<rect x="852" y="150" width="220" height="220" rx="42" fill="none" stroke="#60a5fa" stroke-opacity="0.45" stroke-width="10"/>
+<rect x="928" y="226" width="220" height="220" rx="42" fill="url(#cardGrad)"/>
+<rect x="962" y="292" width="140" height="16" rx="8" fill="#0c0e1a" fill-opacity="0.4"/>
+<rect x="962" y="326" width="140" height="16" rx="8" fill="#0c0e1a" fill-opacity="0.4"/>
+<rect x="962" y="360" width="92" height="16" rx="8" fill="#0c0e1a" fill-opacity="0.4"/>
+<!-- sync pulse -->
+<circle cx="852" cy="150" r="10" fill="#33ff66" opacity="0.9"/>
+<path d="M852 150 C 900 200, 960 240, 1000 300" fill="none" stroke="#33ff66" stroke-width="3" stroke-dasharray="8 10" opacity="0.7"/>
+<circle cx="1004" cy="308" r="10" fill="#33ff66" opacity="0.9"/>
+</g>
+<rect x="846" y="486" width="308" height="56" rx="14" fill="#0c120d" stroke="#1d3a26"/>
+<text x="872" y="522" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="19" fill="#33ff66">◉ LIVE · broadcast ~250 ms</text>
+<text x="106" y="590" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="15" letter-spacing="3" fill="#4a6a54">BUILT BY Hans Sai · SUPABASE REALTIME</text>
+<rect x="2" y="2" width="1196" height="626" rx="28" fill="url(#scan)"/>
+</svg>

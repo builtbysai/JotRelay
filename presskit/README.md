@@ -132,6 +132,7 @@ presskit/
   README.md               — this file
   JotRelay-Presskit.zip   — everything below, zipped (npm run presskit:zip)
   icon/                    — logo/icon system (SVG source + PNG exports)
+  hero.svg                 — README hero visual (dark-terminal style, brand-blue sync motif)
   screenshot/              — product screenshots + the demo video's poster frame
   video/                   — the hero demo video + its narration script
 ```
