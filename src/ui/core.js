@@ -65,7 +65,7 @@ const STATUS_MAP = {
   connected:    { dot: 'connected',    label: 'Connected' },
   saving:       { dot: 'saving',       label: 'Saving…' },
   saved:        { dot: 'saved',        label: 'Saved' },
-  offline:      { dot: 'offline',      label: 'Offline — edits saved locally' },
+  offline:      { dot: 'offline',      label: 'Offline: edits saved locally' },
   reconnecting: { dot: 'reconnecting', label: 'Reconnecting…' },
   error:        { dot: 'error',        label: 'Save failed' },
 };

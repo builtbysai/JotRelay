@@ -45,10 +45,10 @@ export async function _renderCleanupTab(contentEl) {
         <h3>${getIcon('trash', 16)} Storage Orphan Reconciliation</h3>
         <p class="admin-cleanup-desc">
           Calls the <code>syncpad-cleanup</code> Edge Function to find files that exist in
-          Storage but have no matching <code>syncpad_files</code> row — left behind by
-          interrupted uploads or gaps this dashboard doesn't otherwise cover — and remove
+          Storage but have no matching <code>syncpad_files</code> row (left behind by
+          interrupted uploads or gaps this dashboard doesn't otherwise cover) and remove
           them. Starts with a dry run; nothing is deleted until you confirm the count.
-          This is a separate, optional deploy step — it does not run automatically and
+          This is a separate, optional deploy step. It does not run automatically and
           is not required for the rest of JotRelay to work.
           Requires the Edge Function to be deployed (<code>supabase functions deploy syncpad-cleanup --no-verify-jwt</code>,
           see <code>supabase/functions/syncpad-cleanup/README.md</code>).
@@ -63,8 +63,8 @@ export async function _renderCleanupTab(contentEl) {
         <h3>${getIcon('warning', 16)} Reset Database (Debug)</h3>
         <p class="admin-cleanup-desc">
           <strong>For local/dev cleanup only.</strong> Permanently deletes every room and its
-          files, comments, revisions, share links, and reports — the entire dataset, not just
-          expired rooms — and clears the rate-limit log. Admin accounts and this audit log are
+          files, comments, revisions, share links, and reports (the entire dataset, not just
+          expired rooms) and clears the rate-limit log. Admin accounts and this audit log are
           left untouched. This action is <strong>irreversible</strong> and affects every room in
           this Supabase project, not just ones you created.
         </p>
@@ -141,7 +141,7 @@ export async function _renderCleanupTab(contentEl) {
     const resultEl = document.getElementById('admin-reset-db-result');
     const ok = await _adminTypedConfirm(
       'Reset entire database?',
-      'This permanently deletes every room, file, comment, revision, share link, and report in this Supabase project — not just yours. Admin accounts and this audit log are kept.\n\nType RESET EVERYTHING to confirm.',
+      'This permanently deletes every room, file, comment, revision, share link, and report in this Supabase project, not just yours. Admin accounts and this audit log are kept.\n\nType RESET EVERYTHING to confirm.',
       'RESET EVERYTHING',
     );
     if (!ok) return;
@@ -181,7 +181,7 @@ function _wireOrphanReconciliation() {
     const isUnreachable = error?.name === 'FunctionsFetchError'
       || /failed to send a request/i.test(error?.message || '');
     resultEl.textContent = isUnreachable
-      ? 'The syncpad-cleanup Edge Function isn\'t reachable — it likely hasn\'t been deployed to this Supabase project yet. Deploy it with: supabase functions deploy syncpad-cleanup --no-verify-jwt (see supabase/functions/syncpad-cleanup/README.md). This feature is optional; the rest of the dashboard works without it.'
+      ? 'The syncpad-cleanup Edge Function isn\'t reachable. It likely hasn\'t been deployed to this Supabase project yet. Deploy it with: supabase functions deploy syncpad-cleanup --no-verify-jwt (see supabase/functions/syncpad-cleanup/README.md). This feature is optional; the rest of the dashboard works without it.'
       : `Error: ${_friendlyErrorMessage(error)}`;
   };
 

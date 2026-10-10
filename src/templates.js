@@ -49,7 +49,7 @@ Attendees:
 
   standup: {
     label:    'Daily standup',
-    desc:     'Yesterday / today / blockers — scrum format',
+    desc:     'Yesterday / today / blockers: scrum format',
     category: 'Work & Meetings',
     body:
 `# Daily Standup
@@ -129,7 +129,7 @@ Week of:
 ## Lessons Learned
 -
 
-## Next Week — Top 3 Goals
+## Next Week: Top 3 Goals
 1.
 2.
 3.
@@ -367,7 +367,7 @@ Date:
 
   retro: {
     label:    'Retrospective',
-    desc:     'Sprint or project retrospective — what worked and what to improve',
+    desc:     'Sprint or project retrospective: what worked and what to improve',
     category: 'Engineering',
     body:
 `# Retrospective
@@ -457,7 +457,7 @@ function _saveCustomTemplates(templates) {
     localStorage.setItem(CUSTOM_KEY, JSON.stringify(templates));
   } catch (err) {
     if (err?.name === 'QuotaExceededError' || err?.code === 22) {
-      const quota = new Error('Browser storage is full — template could not be saved.');
+      const quota = new Error('Browser storage is full. Template could not be saved.');
       quota.code = 'QUOTA_EXCEEDED';
       throw quota;
     }

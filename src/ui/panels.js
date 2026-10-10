@@ -108,7 +108,7 @@ export function renderSettingsPanel(room) {
   if (revealStatus) {
     revealStatus.textContent = room.reveal_at && new Date(room.reveal_at) > new Date()
       ? `Hidden from others until ${new Date(room.reveal_at).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' })} (${_expiresIn(room.reveal_at)})`
-      : 'Off — hide this note from everyone but you until a set time';
+      : 'Off: hide this note from everyone but you until a set time';
   }
   if (voStatus) {
     voStatus.textContent = !room.view_once ? 'Off'
@@ -118,8 +118,8 @@ export function renderSettingsPanel(room) {
   if (lockStatus) lockStatus.textContent = room.editing_locked ? 'Locked' : 'Unlocked';
   if (dlStatus) {
     dlStatus.textContent = room.cleared_reason === 'device_limit' ? 'Used (cleared)'
-      : room.device_limit ? `Armed — clears after ${room.device_limit} device${room.device_limit === 1 ? '' : 's'}`
-      : 'Off — clear the note after N different devices have joined';
+      : room.device_limit ? `Armed: clears after ${room.device_limit} device${room.device_limit === 1 ? '' : 's'}`
+      : 'Off: clear the note after N different devices have joined';
   }
 
   // Action button labels
@@ -255,7 +255,7 @@ export function renderDevicesList(devices, myDeviceId, onNameChange, { followedD
       : '';
 
     const followBtnHtml = !isMe
-      ? `<button type="button" class="device-follow-btn${isFollowed ? ' is-active' : ''}" aria-pressed="${isFollowed}" title="${isFollowed ? 'Stop following this device' : 'Follow this device — jump your view to where they are'}" aria-label="${isFollowed ? 'Stop following' : 'Follow'} ${escapeHtml(device.device_name || 'this device')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>`
+      ? `<button type="button" class="device-follow-btn${isFollowed ? ' is-active' : ''}" aria-pressed="${isFollowed}" title="${isFollowed ? 'Stop following this device' : 'Follow this device: jump your view to where they are'}" aria-label="${isFollowed ? 'Stop following' : 'Follow'} ${escapeHtml(device.device_name || 'this device')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>`
       : '';
 
     // Same colour this device's caret/selection renders in inside the Live
@@ -321,7 +321,7 @@ export function renderFilesList(files, onDownload, onDelete, opts = {}) {
         <div class="file-name">${file.encrypted ? `<span class="file-encrypted-icon" title="Content encrypted with the room's passphrase" aria-label="Encrypted">${getIcon('lock', 11)}</span>` : ''}${escapeHtml(file.filename)}</div>
         <div class="file-meta">${formatFileSize(file.file_size)} · ${formatTimestamp(file.uploaded_at)}${
           (!selectMode && onCopyRef && file.file_no != null)
-            ? ` · <button class="file-ref-badge" type="button" title="Copy reference: syncpad-file:${file.file_no} — type this directly into the note to link this file, no need to open this panel" aria-label="Copy reference for ${escapeHtml(file.filename)}">#${file.file_no}</button>`
+            ? ` · <button class="file-ref-badge" type="button" title="Copy reference: syncpad-file:${file.file_no}. Type this directly into the note to link this file; no need to open this panel" aria-label="Copy reference for ${escapeHtml(file.filename)}">#${file.file_no}</button>`
             : ''
         }</div>
       </div>
@@ -420,7 +420,7 @@ export function renderHistoryList(revisions, onRestore, opts = {}) {
     item.setAttribute('role', 'listitem');
     const isThisDevice = thisDeviceId && rev.device_id === thisDeviceId;
     const preview = rev._preview == null
-      ? '<span class="history-preview-locked">🔒 Encrypted — open with the passphrase to preview</span>'
+      ? '<span class="history-preview-locked">🔒 Encrypted: open with the passphrase to preview</span>'
       : escapeHtml((rev._preview || '').replace(/\s+/g, ' ').trim().slice(0, 140)) || '<span class="history-preview-empty">(empty note)</span>';
     item.innerHTML = `
       <div class="history-info">
@@ -471,7 +471,7 @@ export function renderHistoryScrubber(entries, onRestore) {
     if (!entry) return;
     label.textContent = entry.label;
     if (entry.locked) {
-      preview.innerHTML = '<span class="history-preview-locked">🔒 Encrypted — open with the passphrase to preview</span>';
+      preview.innerHTML = '<span class="history-preview-locked">🔒 Encrypted: open with the passphrase to preview</span>';
     } else {
       preview.textContent = entry.text || '';
     }
@@ -620,7 +620,7 @@ export function setViewOnceConsumedPanel({
   title.textContent = 'View-once note already viewed';
   msg.textContent = readOnly
     ? 'This read-only note has already been viewed. Ask the editable room holder to reset it if needed.'
-    : 'This room’s view-once note has already been opened. Resetting turns this into a regular room — it will no longer be view-once.';
+    : 'This room’s view-once note has already been opened. Resetting turns this into a regular room. It will no longer be view-once.';
 
   startBtn.classList.toggle('hidden', !!readOnly);
   startBtn.onclick = readOnly ? null : onStartNew;

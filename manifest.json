@@ -1,7 +1,7 @@
 {
   "name": "JotRelay",
   "short_name": "JotRelay",
-  "description": "Live shared notepad — real-time sync across all your devices.",
+  "description": "Live shared notepad: real-time sync across all your devices.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

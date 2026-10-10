@@ -15,7 +15,7 @@ const STEPS = [
   {
     selector: '.editor-area',
     title: 'Your note',
-    text: 'Start typing here — every keystroke saves automatically and syncs live to anyone else viewing this room.',
+    text: 'Start typing here. Every keystroke saves automatically and syncs live to anyone else viewing this room.',
   },
   {
     selector: '.editor-toolbar .md-segmented',
@@ -37,7 +37,7 @@ const STEPS = [
     // link" while either editing surface has focus, and only opens this
     // outside the editor — the exact opposite of what a user landing back
     // in the editor after this tour and pressing it would expect.
-    text: () => `Click here, or press ${_isMac() ? 'Cmd' : 'Ctrl'} K outside the editor, to jump straight to any feature — Templates, Find, Settings, Export, and more.`,
+    text: () => `Click here, or press ${_isMac() ? 'Cmd' : 'Ctrl'} K outside the editor, to jump straight to any feature: Templates, Find, Settings, Export, and more.`,
   },
   {
     selector: '#btn-share',
@@ -45,12 +45,12 @@ const STEPS = [
     // The Share modal itself only covers the editable/read-only links and
     // the short code — passcode and the server-enforced editing lock live
     // in Settings (More → Settings), not here, so don't imply otherwise.
-    text: 'Anyone with the link can view and edit. Get a read-only link or a short spoken code here — for a passcode or to lock editing entirely, look in More → Settings.',
+    text: 'Anyone with the link can view and edit. Get a read-only link or a short spoken code here. For a passcode or to lock editing entirely, look in More → Settings.',
   },
   {
     selector: '#btn-more',
     title: 'Everything else',
-    text: 'Files, Settings, Templates, keyboard shortcuts, and more all live behind this menu — including this tour, any time you want to see it again.',
+    text: 'Files, Settings, Templates, keyboard shortcuts, and more all live behind this menu, including this tour, any time you want to see it again.',
   },
 ];
 

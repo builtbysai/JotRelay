@@ -133,7 +133,7 @@ window.addEventListener('appinstalled', () => {
 // Using { once: true } so repeated keystrokes don't re-show the toast.
 window.addEventListener('jotrelay:draft-storage-full', () => {
   UI.showToast(
-    'Browser storage is full — local drafts cannot be saved. Your notes still sync to the server.',
+    'Browser storage is full. Local drafts cannot be saved. Your notes still sync to the server.',
     'warning',
     8000,
   );

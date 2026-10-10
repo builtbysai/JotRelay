@@ -19,7 +19,7 @@ export const _downloadBlob = (content, filename, mime) => {
 // Shared guard: all export actions are meaningless on an empty note.
 export const _requireContent = () => {
   if (UI.getEditorValue().trim()) return true;
-  UI.showToast('Nothing to export — the note is empty.', 'warning');
+  UI.showToast('Nothing to export: the note is empty.', 'warning');
   return false;
 };
 
@@ -138,7 +138,7 @@ details.md-inline-toc>ul{display:block!important;list-style:none;margin:0.6em 0 
     // any await — browsers only allow it without a popup-blocker prompt when
     // it's the direct, unbroken result of a user gesture.
     const win = window.open('', '_blank');
-    if (!win) { UI.showToast('Pop-up blocked — allow pop-ups and try again.', 'warning'); return; }
+    if (!win) { UI.showToast('Pop-up blocked. Allow pop-ups and try again.', 'warning'); return; }
     const content = UI.getEditorValue();
     const { html: renderedHtml, headings } = renderMarkdownWithToc(content);
     const resolvedHtml = await _resolveFileImageRefsForExport(renderedHtml);

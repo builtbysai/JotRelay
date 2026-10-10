@@ -346,7 +346,7 @@ export function renderCommentsList(comments, { onDelete, onJump, onReply, canDel
       : '<div class="comment-anchor-preview">On: cursor position</div>';
     const messagesHtml = thread.messages.map((c) => {
       const bodyHtml = c._preview == null
-        ? '<span class="comment-text-locked">🔒 Encrypted — open with the passphrase to view</span>'
+        ? '<span class="comment-text-locked">🔒 Encrypted: open with the passphrase to view</span>'
         : escapeHtml(c._preview);
       return `
         <div class="comment-thread-message" data-comment-id="${escapeHtml(c.id)}">
@@ -461,7 +461,7 @@ export function renderFloatingComments(dots, { activeId, onToggle, onDelete, onN
   bubble.className = `comment-floating-bubble${animate ? ' comment-bubble-navigating' : ''}`;
   bubble.style.top = `${active.y}px`;
   const bodyHtml = active.text == null
-    ? '<span class="comment-text-locked">🔒 Encrypted — open with the passphrase to view</span>'
+    ? '<span class="comment-text-locked">🔒 Encrypted: open with the passphrase to view</span>'
     : escapeHtml(active.text);
   bubble.innerHTML = `
     <div class="comment-floating-bubble-meta">${escapeHtml(active.author || 'Someone')} · ${formatTimestamp(active.createdAt)}</div>

@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Phase 70 — AI-slop copy cleanup (em dashes)
+
+#### Changed
+- **Removed em dashes from all user-facing copy across the site.** Landing page, app toasts/dialogs, onboarding tour, settings labels, template descriptions, admin dashboard text, PWA manifest, and README now use periods, colons, or commas instead. No functionality, layout, or design changed — text only. Placeholder `—` glyphs in empty table cells, the smart-dash editor feature (`--` → `—`), and code comments were intentionally left alone.
+
 ### Phase 69 — Native right-click menu, keyboard-open self-heal
 
 #### Removed

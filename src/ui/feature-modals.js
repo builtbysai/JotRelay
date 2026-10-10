@@ -109,7 +109,7 @@ export function populateShareModal({
   const codeSection = document.getElementById('share-code-section');
   if (codeSection) codeSection.classList.toggle('hidden', !showRoomCode);
   if (showRoomCode) {
-    const codeDisplay = roomCode || (roomCodeError ? 'Short codes need one more setup step — see supabase/migrations/0002_short_room_codes.sql.' : 'Generating short code…');
+    const codeDisplay = roomCode || (roomCodeError ? 'Short codes need one more setup step. See supabase/migrations/0002_short_room_codes.sql.' : 'Generating short code…');
     _wireShareRow({ fieldId: 'share-code-text', copyBtnId: 'share-code-copy', openId: null, nativeBtnId: null, errorId: 'share-code-error', url: roomCode, displayValue: codeDisplay });
   }
 }

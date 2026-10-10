@@ -174,7 +174,7 @@ export function _wireHeader() {
       if (saveBtn) saveBtn.disabled = false;
       input?.focus();
       input?.select();
-      UI.showToast('Could not save title — check your connection and try again.', 'error');
+      UI.showToast('Could not save title. Check your connection and try again.', 'error');
     }
   };
   document.getElementById('room-title-save-btn')?.addEventListener('click', saveTitle);
