@@ -141,8 +141,9 @@ export function closeFloatingCommentComposer() {
   // Explicitly blur before removing rather than relying on removal itself
   // to reliably fire blur/focusout — inconsistent across browsers/mobile
   // Safari in particular — which would otherwise leave
-  // keyboard-viewport.js's body.keyboard-open class stuck (its only
-  // cleanup path is focusout) after Enter/Escape closes this composer.
+  // keyboard-viewport.js's body.keyboard-open class stuck until its
+  // geometry self-heal noticed the viewport recovering, instead of clearing
+  // it immediately here after Enter/Escape closes this composer.
   // .blur() on an element that isn't actually focused is a harmless no-op,
   // and trySubmit()'s clear-before-read pattern above already makes this
   // safe to trigger a second time from the resulting blur event.
