@@ -249,7 +249,7 @@ export function _openTemplatesModalFresh() {
             let count;
             try { count = importCustomTemplates(String(e.target.result)); }
             catch (err) {
-              if (err?.code === 'QUOTA_EXCEEDED') { UI.showToast('Browser storage is full — could not import templates.', 'error'); return; }
+              if (err?.code === 'QUOTA_EXCEEDED') { UI.showToast('Browser storage is full. Could not import templates.', 'error'); return; }
               UI.showToast('Import failed.', 'error'); return;
             }
             if (count < 0) { UI.showToast('Invalid file - expected a JSON object of templates.', 'error'); return; }
@@ -269,7 +269,7 @@ export function _wireSaveAsTemplate() {
   // ── Save as template ───────────────────────────────────────────────────────
   document.getElementById('btn-save-as-template')?.addEventListener('click', async () => {
     const body = UI.getEditorValue().trim();
-    if (!body) { UI.showToast('The note is empty — nothing to save as a template.', 'warning'); return; }
+    if (!body) { UI.showToast('The note is empty. Nothing to save as a template.', 'warning'); return; }
     const label = await UI.showPrompt('Template name:', { defaultValue: 'My template', confirmLabel: 'Save' });
     if (!label?.trim()) return;
     try {
@@ -285,7 +285,7 @@ export function _wireSaveAsTemplate() {
         setTimeout(_openTemplatesModalFresh, 150);
       }
     } catch (err) {
-      if (err?.code === 'QUOTA_EXCEEDED') { UI.showToast('Browser storage is full — template could not be saved.', 'error'); return; }
+      if (err?.code === 'QUOTA_EXCEEDED') { UI.showToast('Browser storage is full. Template could not be saved.', 'error'); return; }
       UI.showToast('Could not save template.', 'error');
     }
   });
@@ -632,7 +632,7 @@ export function _wireSettings() {
       catch { encryptedFiles = []; } // non-critical — see existing-files warning below for the enable path's same fallback
       if (encryptedFiles.length) {
         UI.showToast(
-          `This room has ${encryptedFiles.length} encrypted file${encryptedFiles.length !== 1 ? 's' : ''} — delete ${encryptedFiles.length !== 1 ? 'them' : 'it'} first. Disabling encryption would make ${encryptedFiles.length !== 1 ? 'them' : 'it'} permanently unreadable, even with the correct passphrase.`,
+          `This room has ${encryptedFiles.length} encrypted file${encryptedFiles.length !== 1 ? 's' : ''}. Delete ${encryptedFiles.length !== 1 ? 'them' : 'it'} first. Disabling encryption would make ${encryptedFiles.length !== 1 ? 'them' : 'it'} permanently unreadable, even with the correct passphrase.`,
           'warning', 7000,
         );
         return;
@@ -671,7 +671,7 @@ export function _wireSettings() {
       let existingFiles;
       try { existingFiles = await listFiles(state.roomId); }
       catch { existingFiles = []; } // non-critical — just skip the warning if file list fails
-      if (existingFiles.length && !await UI.showConfirm('This room already has file attachments that were uploaded before encryption was turned on — they will stay unencrypted. Only newly uploaded files will be encrypted. Continue?', { confirmLabel: 'Continue' })) return;
+      if (existingFiles.length && !await UI.showConfirm('This room already has file attachments that were uploaded before encryption was turned on. They will stay unencrypted; only newly uploaded files will be encrypted. Continue?', { confirmLabel: 'Continue' })) return;
       const pp = await UI.showPrompt('Set an encryption passphrase:', { placeholder: 'Passphrase…', confirmLabel: 'Enable encryption' });
       if (!pp?.trim()) return;
       // PBKDF2 key derivation takes 1-3 s — indicate progress on the button.

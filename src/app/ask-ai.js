@@ -63,7 +63,7 @@ export async function _runAskAi() {
 
   if (!_hasConsented()) {
     const ok = await UI.showConfirm(
-      'Ask AI sends your selected text to a third-party AI service (Google Gemini) for processing. Its response is added as a comment on that selection — your note text is never changed. It never sends the rest of your note. Continue?',
+      'Ask AI sends your selected text to a third-party AI service (Google Gemini) for processing. Its response is added as a comment on that selection. Your note text is never changed. It never sends the rest of your note. Continue?',
       { confirmLabel: 'Continue', cancelLabel: 'Cancel' },
     );
     if (!ok) return;
@@ -80,7 +80,7 @@ export async function _runAskAi() {
   try {
     const result = await askAi(selectedText, instruction.trim());
     if (state.roomId !== roomAtSelection) {
-      UI.showToast('You switched rooms — AI result discarded.', 'warning', 5000);
+      UI.showToast('You switched rooms. AI result discarded.', 'warning', 5000);
       return;
     }
     let commentText = AI_COMMENT_PREFIX + result;

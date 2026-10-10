@@ -111,7 +111,7 @@ export async function refreshFiles() {
   try {
     files = _sortFiles(await listFiles(state.roomId));
   } catch {
-    UI.showToast('Could not load files — check your connection.', 'error');
+    UI.showToast('Could not load files. Check your connection.', 'error');
     return;
   }
   UI.renderFilesList(
@@ -161,7 +161,7 @@ export async function refreshFiles() {
       // (so it must respect downloads_disabled too).
       onCopyRef: (canEdit() && !state.room?.downloads_disabled) ? async (file) => {
         const ok = await copyToClipboard(`syncpad-file:${_fileRefId(file)}`);
-        UI.showToast(ok ? 'Reference copied — paste it anywhere in the note.' : 'Could not copy reference.', ok ? 'success' : 'error');
+        UI.showToast(ok ? 'Reference copied. Paste it anywhere in the note.' : 'Could not copy reference.', ok ? 'success' : 'error');
       } : null,
       onPreview: async (file) => {
         try {
@@ -180,13 +180,13 @@ export async function refreshFiles() {
         // expires either.
         if (file.encrypted) {
           if (file.file_no == null) {
-            UI.showToast('This file predates short file links and can’t be deep-linked — download it instead.', 'warning');
+            UI.showToast('This file predates short file links and can’t be deep-linked. Download it instead.', 'warning');
             return;
           }
           const url = `${location.origin}${BASE}/${state.roomId}?file=${file.file_no}`;
           const ok  = await copyToClipboard(url);
           UI.showToast(
-            ok ? 'Link copied — opens this file once the room is unlocked.' : 'Could not copy link.',
+            ok ? 'Link copied: opens this file once the room is unlocked.' : 'Could not copy link.',
             ok ? 'success' : 'error',
           );
           return;
@@ -199,7 +199,7 @@ export async function refreshFiles() {
           const url = await getForceDownloadUrl(file.file_path, file.filename, { fresh: true });
           const ok  = await copyToClipboard(url);
           UI.showToast(
-            ok ? `Link copied — valid ~55 min.` : 'Could not copy link.',
+            ok ? `Link copied (valid ~55 min).` : 'Could not copy link.',
             ok ? 'success' : 'error',
           );
         } catch { UI.showToast('Could not create link.', 'error'); }
@@ -311,7 +311,7 @@ export function _wireFilesBulkSelect() {
     // Load current file list so we have file_path for each id
     let allFiles;
     try { allFiles = await listFiles(state.roomId); }
-    catch { UI.showToast('Could not load files — check your connection.', 'error'); return; }
+    catch { UI.showToast('Could not load files. Check your connection.', 'error'); return; }
     for (const id of ids) {
       const f = allFiles.find(x => x.id === id);
       if (!f) continue;

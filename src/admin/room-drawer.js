@@ -115,7 +115,7 @@ export async function _openRoomDetail(roomId) {
         ${state.hasQuarantine ? `
         <div class="admin-detail-row">
           <span class="admin-detail-label">Quarantined</span>
-          <span class="admin-detail-value">${isQuarantined ? `⛔ Yes — ${escapeHtml(room.quarantine_reason || '')} (${_fullDate(room.quarantined_at)})` : 'No'}</span>
+          <span class="admin-detail-value">${isQuarantined ? `⛔ Yes: ${escapeHtml(room.quarantine_reason || '')} (${_fullDate(room.quarantined_at)})` : 'No'}</span>
         </div>` : ''}
       </div>
 

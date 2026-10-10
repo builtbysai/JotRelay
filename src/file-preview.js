@@ -166,7 +166,7 @@ async function _renderText(file, url, mode) {
   const truncated = text.length > PREVIEW_TEXT_LIMIT;
   const display   = truncated ? text.slice(0, PREVIEW_TEXT_LIMIT) : text;
   const warning   = truncated
-    ? `<div class="preview-truncation-warning">⚠ Large file — showing first ${Math.round(PREVIEW_TEXT_LIMIT / 1024)} KB only.</div>`
+    ? `<div class="preview-truncation-warning">⚠ Large file: showing first ${Math.round(PREVIEW_TEXT_LIMIT / 1024)} KB only.</div>`
     : '';
 
   if (mode === 'markdown') {

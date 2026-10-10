@@ -152,7 +152,7 @@ async function _exportRoomsCsv() {
 
   if (btn) { btn.disabled = false; btn.textContent = '⬇ Export CSV'; }
   if (error) { await showAlert(`Export failed: ${_friendlyErrorMessage(error)}`); return; }
-  if (!rows.length) { _showToast('No rooms match the current filter — nothing to export.', ''); return; }
+  if (!rows.length) { _showToast('No rooms match the current filter. Nothing to export.', ''); return; }
 
   const header = [
     'room_id', 'room_name', 'created_at', 'updated_at', 'expires_at',

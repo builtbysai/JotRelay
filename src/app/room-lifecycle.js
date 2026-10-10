@@ -471,7 +471,7 @@ export async function joinRoom(roomId, { isNewRoom = false } = {}) {
     // Log the raw error so RLS / network failures are diagnosable in DevTools.
     console.error(`[${BRAND_NAME}] joinRoom failed for`, roomId, err);
     UI.showLoadingError(
-      err?.code === 'RATE_LIMITED' ? err.message : 'Could not load room — check your connection and try again.',
+      err?.code === 'RATE_LIMITED' ? err.message : 'Could not load room. Check your connection and try again.',
       () => joinRoom(roomId, { isNewRoom }),  // retry callback
     );
     return;
@@ -876,7 +876,7 @@ async function startApp(isNewRoom = false) {
       // rather than trusting the raw input the rename came from.
       const applied = getDeviceName();
       updatePresenceDeviceName(applied);
-      UI.showToast(`Renamed to "${applied}" — visible to everyone in this room.`, 'success');
+      UI.showToast(`Renamed to "${applied}". Visible to everyone in this room.`, 'success');
     }, {
       followedDeviceId: state.followedDeviceId,
       onToggleFollow: (id) => {

@@ -24,11 +24,11 @@ import { wireTabListKeyboardNav, syncTabListFocus } from '../utils.js';
 
 const SCENES = ['write', 'collaborate', 'review', 'share', 'handoff'];
 const SCENE_LABELS = {
-  write: 'Write — typing a checklist',
-  collaborate: 'Collaborate — Hans joins and adds a line live',
-  review: 'Review — an anchored comment on the launch date',
-  share: 'Share — permissions and a share link',
-  handoff: 'Handoff — sending a file to mobile',
+  write: 'Write: typing a checklist',
+  collaborate: 'Collaborate: Hans joins and adds a line live',
+  review: 'Review: an anchored comment on the launch date',
+  share: 'Share: permissions and a share link',
+  handoff: 'Handoff: sending a file to mobile',
 };
 // Active scene-to-scene pacing sums to ~13s (spec: 12–16s); handoff then
 // holds its completed state for ~4s before the loop restarts (spec: a
