@@ -12,8 +12,8 @@ import { state } from './state.js';
 import { _applyMarkdownMode, _openFloatingCommentComposer } from './comments-preview.js';
 import {
   _toggleMonospace, _insertTextAtActiveCursor, _applyFormatToActiveSurface,
-  _closeEditorContextMenu, _wireEditorCore, _wireEditorToolbarAndLifecycle,
-  _wireEditorContextMenu, _wireSlashMenuDismissal, _wirePasteSanitization,
+  _wireEditorCore, _wireEditorToolbarAndLifecycle,
+  _wireSlashMenuDismissal, _wirePasteSanitization,
   _wireEditorPreferenceToggles,
 } from './editor-behavior.js';
 import { _openShareModal } from './landing.js';
@@ -40,7 +40,6 @@ function _wireShortcuts() {
     },
     onForceClose: () => {
       closeMoreDropdown();
-      _closeEditorContextMenu();
       UI.closeAllPanels();
       UI.closeAllModals();
     },
@@ -94,7 +93,6 @@ export function wireEvents() {
   _wirePasteSanitization();
   _wireEditorPreferenceToggles();
   _wireCommandPalette();
-  _wireEditorContextMenu();
   _wireSlashMenuDismissal();
 
   // Test-synchronization hook only — tests/helpers.js's createRoom() waits on
