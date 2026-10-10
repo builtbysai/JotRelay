@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Phase 69 — Native right-click menu, keyboard-open self-heal
+
+#### Removed
+- **The custom right-click context menu is gone — right-clicks in the editor now open the browser's native menu.** The custom menu (`_wireEditorContextMenu` and its Cut/Copy/Paste/Delete/Select all/Add comment/Ask AI actions in `src/app/editor-behavior.js`, the `#editor-context-menu` markup in `index.html`, and its styles in `styles/modals.css`) duplicated what the native menu already provides, while hiding spell-check suggestions and Inspect behind a Shift+right-click escape hatch most users never discover. Touch long-press already deferred to the OS text-selection UI and is unaffected.
+
+#### Fixed
+- **The mobile bottom action bar could stay hidden after the on-screen keyboard closed.** `body.keyboard-open` (which hides the bar while typing) was only ever cleared by `focusout`, which never fires when Android's back button/gesture dismisses the keyboard without blurring the focused input — or when a focused element is removed from the DOM. Added a geometry-based self-heal in `src/keyboard-viewport.js`: it tracks the tallest viewport height seen at the current width as the no-keyboard baseline and clears a stuck `keyboard-open` once the height genuinely recovers to near that peak (rotation reseeds the baseline instead of false-healing).
+
 ### Phase 68 — Admin dashboard staleness fixes, export file-link bug
 
 #### Fixed

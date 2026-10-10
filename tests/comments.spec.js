@@ -139,8 +139,8 @@ test.describe('Floating comment composer', () => {
     await expect(page.locator('.comment-dot')).toHaveCount(1, { timeout: 3000 });
   });
 
-  // The editor context menu's "Add comment" action is covered in
-  // tests/editor-context-menu.spec.js, alongside its other actions.
+  // (The old custom editor context menu also had an "Add comment" action;
+  // right-click now defers to the browser's native menu instead.)
 });
 
 test.describe('Floating comment bubble', () => {
